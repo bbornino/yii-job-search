@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+$formatter =  \Yii::$app->formatter;
 
 /** @var yii\web\View $this */
 /** @var app\models\JobSites $model */
@@ -26,26 +27,39 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'name',
-            'url:url',
-            'review_text',
-            'email_alert_info:email',
-            'description:ntext',
-            'rating',
-            'resume_format',
-            'stores_resume',
-            'active',
-            'github_field',
-            'project_site_field',
-            'last_visited_on',
-            'resume_updated_on',
-            'created_on',
-            'updated_on',
-        ],
-    ]) ?>
+    <div class="row mt-3">
+        <div class="col">
+            <strong>URL</strong>
+            <?= $model->url ?>
+        </div>
+        <div class="col">
+            <strong>Rating</strong>
+            <?= $model->rating ?>
+        </div>
+        <div class="col">
+            <strong>Last Visited</strong>
+            <?= $formatter->asDate($model->last_visited_on, 'medium') ?>
+        </div>
+        <div class="col">
+            <strong>Resume Last Updated</strong>
+            <?= $formatter->asDate($model->resume_updated_on, 'medium') ?>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Review Headline</strong>
+            <?= $model->review_text ?>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Review Details</strong>
+            <?= $model->description ?>
+        </div>
+    </div>
+
+
 
 </div>
