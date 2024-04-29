@@ -12,41 +12,68 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'company_name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'company_url')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_title')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_id')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_url')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_location_city')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_location_type')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'posting_comments')->textarea(['rows' => 6]) ?>
-
     <?= $form->field($model, 'job_site_id')->textInput() ?>
 
-    <?= $form->field($model, 'employment_type')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'company_name')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'company_url')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'pay_range')->textInput(['maxlength' => true]) ?>
+    <div class="row pt-3">
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'posting_title')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'posting_url')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'technology_stack')->textInput(['maxlength' => true]) ?>
+    <div class="row pt-3">
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'posting_location_city')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'posting_location_type')->dropDownList(['On-Site' => 'On-Site', 
+                                                    'Hybrid' => 'Hybrid', 'Remote' => 'Remote']) ?>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'employment_type')->dropDownList(['Full-time' => 'Full-time', 
+                                                    'Freelance' => 'Freelance', 'Contract' => 'Contract']) ?>
+        </div>
+        <!-- <?= $form->field($model, 'posting_id')->textInput(['maxlength' => true]) ?> -->
+        <!-- <?= $form->field($model, 'archive')->textInput() ?> -->
+    </div>
 
-    <?= $form->field($model, 'archive')->textInput() ?>
+    <div class="row pt-3">
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'pay_range')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'applied_on')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'rejected_on')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <?= $form->field($model, 'interviewed_on')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'applied_on')->textInput() ?>
+    <div class="row pt-3">
+        <div class="col">
+            <?= $form->field($model, 'technology_stack')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'rejected_on')->textInput() ?>
-
-    <?= $form->field($model, 'interviewed_on')->textInput() ?>
-
-    <?= $form->field($model, 'created_on')->textInput() ?>
-
-    <?= $form->field($model, 'updated_on')->textInput() ?>
+    <div class="row pt-3">
+        <div class="col">
+        <?= $form->field($model, 'posting_comments')->textarea(['rows' => 12]) ?>
+        </div>
+    </div>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
