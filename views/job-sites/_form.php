@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+$formatter =  \Yii::$app->formatter;
 
 /** @var yii\web\View $this */
 /** @var app\models\JobSites $model */
@@ -37,10 +38,22 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'project_site_field')->radioList(['1' => 'Yes', '0' => 'No']) ?>
         </div>
         <div class="col-3">
-            <?= $form->field($model, 'last_visited_on')->textInput() ?>
+            <div class="form-group field-jobsites-last_visited_on">
+                <label class="control-label" for="jobsites-last_visited_on">Last Visited On</label>
+                <input type="date" id="jobsites-last_visited_on" class="form-control"
+                        name="JobSites[last_visited_on]" 
+                        value="<?= $model->last_visited_on ?>">
+                <div class="help-block"></div>
+            </div>
         </div>
         <div class="col-3">
-            <?= $form->field($model, 'resume_updated_on')->textInput() ?>
+            <div class="form-group field-jobsites-resume_updated_on">
+                <label class="control-label" for="jobsites-resume_updated_on">Resume Updated On</label>
+                <input type="date" id="jobsites-resume_updated_on" class="form-control"
+                        name="JobSites[resume_updated_on]" 
+                        value="<?= $model->resume_updated_on ?>">
+                <div class="help-block"></div>
+            </div>
         </div>
     </div>
 
