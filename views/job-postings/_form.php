@@ -49,17 +49,35 @@ use yii\widgets\ActiveForm;
     </div>
 
     <div class="row pt-3">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-md-6 col-lg-3">
             <?= $form->field($model, 'pay_range')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-sm-6 col-md-3">
-            <?= $form->field($model, 'applied_on')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6 col-lg-3">
+            <div class="form-group field-jobpostings-applied_on">
+                <label class="control-label" for="jobpostings-applied_on">Applied On</label>
+                <input type="datetime-local" id="jobpostings-applied_on" class="form-control"
+                        name="JobPostings[applied_on]" 
+                        value="<?= $model->applied_on ?>">
+                <div class="help-block"></div>
+            </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-            <?= $form->field($model, 'rejected_on')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6 col-lg-3">
+            <div class="form-group field-jobpostings-rejected_on">
+                <label class="control-label" for="jobpostings-rejected_on">Rejected On</label>
+                <input type="datetime-local" id="jobpostings-rejected_on" class="form-control"
+                        name="JobPostings[rejected_on]" 
+                        value="<?= $model->rejected_on ?>">
+                <div class="help-block"></div>
+            </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-            <?= $form->field($model, 'interviewed_on')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6 col-lg-3">
+            <div class="form-group field-jobpostings-interviewed_on">
+                <label class="control-label" for="jobpostings-interviewed_on">Interviewed On</label>
+                <input type="datetime-local" id="jobpostings-interviewed_on" class="form-control"
+                        name="JobPostings[interviewed_on]" 
+                        value="<?= $model->interviewed_on ?>">
+                <div class="help-block"></div>
+            </div>
         </div>
     </div>
 
