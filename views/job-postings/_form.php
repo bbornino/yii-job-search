@@ -89,7 +89,7 @@ use yii\widgets\ActiveForm;
 
     <div class="row pt-3">
         <div class="col">
-        <?= $form->field($model, 'posting_comments')->textarea(['rows' => 12]) ?>
+        <?= $form->field($model, 'posting_comments')->textarea(['rows' => 25]) ?>
         </div>
     </div>
 
