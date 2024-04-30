@@ -44,10 +44,10 @@ class JobPostings extends \yii\db\ActiveRecord
     {
         return [
             [['posting_comments'], 'string'],
-            [['job_site_id', 'created_on'], 'required'],
+            [['job_site_id'], 'required'],
             [['job_site_id', 'archive'], 'integer'],
             [['applied_on', 'rejected_on', 'interviewed_on', 'created_on', 'updated_on'], 'safe'],
-            [['company_name', 'company_url', 'posting_title', 'posting_id', 'posting_url', 'posting_location_city', 'posting_location_type', 'employment_type', 'pay_range', 'technology_stack'], 'string', 'max' => 50],
+            [['company_name', 'company_url', 'posting_title', 'posting_id', 'posting_url', 'posting_location_city', 'posting_location_type', 'employment_type', 'pay_range', 'technology_stack', 'created_on'], 'string', 'max' => 50],
         ];
     }
 
