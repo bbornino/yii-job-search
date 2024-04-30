@@ -116,6 +116,26 @@ class JobPostingsController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionWeekly()
+    {
+        $connection = \Yii::$app->getDb();
+        $command = $connection->createCommand("
+        SELECT CONCAT(DATE_FORMAT(applied_on, '%Y'), '/', WEEK(p.applied_on)) AS week_name,
+                        DATE_FORMAT(applied_on, '%Y') AS posting_year,
+                        WEEK(p.applied_on) AS posting_week,
+                        MONTH(p.applied_on) AS posting_month,
+                        COUNT(*) AS week_count
+                    FROM job_sites s JOIN job_postings p ON p.job_site_id = s.id
+                        GROUP BY week_name
+                        ORDER BY posting_year ASC, posting_week ASC
+        ");
+        $weeklyReport = $command->queryAll();
+
+        return $this->render('weekly', [
+            'weeklyReport' => $weeklyReport,
+        ]);
+    }
+
     /**
      * Finds the JobPostings model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
