@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="job-postings-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <!-- <h1><?= Html::encode($this->title) ?></h1> -->
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -26,7 +26,48 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Company Name</strong><br>
+            <?= $model->company_name ?>
+        </div>
+        <div class="col">
+            <strong>Posting Title</strong><br>
+            <?= $model->posting_title ?>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Pay Range</strong><br>
+            <?= $model->pay_range ?>
+        </div>
+        <div class="col">
+            <strong>Location City</strong><br>
+            <?= $model->posting_location_city ?>
+        </div>
+        <div class="col">
+            <strong>Location Type</strong><br>
+            <?= $model->posting_location_type ?>
+        </div>
+        <div class="col">
+            <strong>Employment Type</strong><br>
+            <?= $model->employment_type ?>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Technology Stack</strong><br>
+            <?= $model->technology_stack ?>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <strong>Posting Comments</strong><br>
+            <?= $model->posting_comments ?>
+        </div>
+    </div>
+
+    <!-- <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
@@ -49,6 +90,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_on',
             'updated_on',
         ],
-    ]) ?>
+    ]) ?> -->
 
 </div>

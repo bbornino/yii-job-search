@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'job_site_id')->textInput() ?>
+    <!-- <?= $form->field($model, 'job_site_id')->textInput() ?> -->
 
     <div class="row">
         <div class="col-sm-12 col-md-6">
@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-sm-12 col-md-6">
             <?= $form->field($model, 'posting_title')->textInput(['maxlength' => true]) ?>
         </div>
@@ -32,7 +32,7 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-sm-12 col-md-6">
             <?= $form->field($model, 'posting_location_city')->textInput(['maxlength' => true]) ?>
         </div>
@@ -48,7 +48,7 @@ use yii\widgets\ActiveForm;
         <!-- <?= $form->field($model, 'archive')->textInput() ?> -->
     </div>
 
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-md-6 col-lg-3">
             <?= $form->field($model, 'pay_range')->textInput(['maxlength' => true]) ?>
         </div>
